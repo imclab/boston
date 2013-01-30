@@ -139,7 +139,7 @@
     // Fuck javascript. Caching and autoplay attr mess up pausing.
     var overlay = jQuery('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
             overlay.appendTo(document.body);
-            var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/" + m.properties.name + ".webm";
+            var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/" + m.properties.video + ".webm";
             $("#myVideo").attr("src", source);
             map.ease.location({
                 lat: m.geometry.coordinates[1],
