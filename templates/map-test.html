@@ -4,19 +4,82 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
   <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
-  <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css' rel='stylesheet' />
+  <!--<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css' rel='stylesheet' />-->
+  <link href='/static/mapbox.css' rel='stylesheet' />
     <link href='/static/map.css' rel='stylesheet' type='text/css' />
 
   <style>
+    @font-face {
+        font-family: StMarie-Thin;
+        src: url('static/StMarie-Thin.otf');
+    }
 
+    h2 {
+        font-family: StMarie-Thin;
+        font-size: 24px;
+    }
+
+    h3 {
+        font-family: StMarie-Thin;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    #logo {
+        font-family: StMarie-Thin;
+        font-size: 48px;
+        position: fixed;
+        top: 60px;
+        left: 60px;
+        color: #ED9444;
+        z-index: 100000;
+    }
+
+    #shadow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        filter:alpha(opacity=80);
+        -moz-opacity: 0.8;
+        -khtml-opacity: 0.8;
+        opacity: 0.8;
+        z-index: 9000;
+    }
+    #overlay {
+        position: fixed;
+        top: 50%;
+        margin-left: -320px;
+       left: 50%;
+        margin-top: -180px;
+       width: 640px;
+       height: 360px;
+        background-color: #FFF;
+        filter:alpha(opacity=100) !important;
+        -moz-opacity: 1.0 !important;
+        -khtml-opacity: 1.0 !important;
+        opacity: 1.0 !important;
+        z-index: 10000 !important;
+    }
+    
+    .descriptionBox {
+        width:320px;
+        height: 240px;
+    }
+        .descriptionImg {float:left; width:80px; height:60px; margin-right:6px; margin-top:6px;}
+    .marker-tooltip {
+        background-color: #0CF !important;
+    }   
   </style>
 </head>
 
 <body>
 
 <div id='map'></div>
-<div id='overlay'>this is the box that will contain the list of POI's</div>
-
+<!-- <div id='overlay'>this is the box that will contain the list of POI's</div> -->
+<div id='logo'>Urban Strata</div>
 <script>
     // GeoJSON input features
     // The image and url properties of the features will be used in
@@ -24,32 +87,38 @@
     var features = [{
         "geometry": { "type": "Point", "coordinates": [-71.06155264816285, 42.365711128482284]},
         "properties": {
+        "address": "529 Cambridge Street",
             "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/DCmontage4.jpg/250px-DCmontage4.jpg",
-            "url": "",
+            "video": "",
             "city": "Boston",
-            "name": "POI3"
+            "name": "From Fruit to Philanthropy",
+        "desc": "Lorem Ipsum sit amet blah blah blah blah blah blah foo bar foo bar nasdasdsad asd asdsad asd asd aasdas dasd asdasda sd asd asdsa asdasdasd"
         }
     }, {
         "geometry": { "type": "Point", "coordinates": [-71.06155264816285, 42.361711128482284]},
         "properties": {
+        "address": "529 Cambridge Street",
             "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Chicago_montage.jpg/300px-Chicago_montage.jpg",
-            "url": "",
+            "video": "",
             "city": "Boston",
-            "name": "POI2"
+            "name": "POI2",
+        "desc": "Lorem Ipsum sit amet blah blah blah blah blah blah foo bar foo bar nasdasdsad asd asdsad asd asd aasdas dasd asdasda sd asd asdsa asdasdasd"
         }
     }, {
         "geometry": { "type": "Point", "coordinates": [-71.06555264816285, 42.361711128482284]},
         "properties": {
+        "address": "529 Cambridge Street",
             "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/NYC_Montage_2011.jpg/275px-NYC_Montage_2011.jpg",
-            "url": "",
+            "video": "",
             "city": "Boston",
-            "name": "POI1"
+            "name": "POI1",
+        "desc": "Lorem Ipsum sit amet blah blah blah blah blah blah foo bar foo bar nasdasdsad asd asdsad asd asd aasdas dasd asdasda sd asd asdsa asdasdasd"
         }
     }];
 
     // Create map
     var map = mapbox.map('map');
-    map.addLayer(mapbox.layer().id('gavinh.NP_Map_v3'));
+    map.addLayer(mapbox.layer().id('gavinh.UrbanStrata'));
 
     // Create and add marker layer
     var markerLayer = mapbox.markers.layer().features(features);
@@ -61,8 +130,17 @@
 
         // Add function that centers marker on click
         MM.addEvent(elem, 'click', function(e) {
-            console.log(m.properties.city);
-            $('#overlay').append('<p>' + m.properties.city + '</p>');
+    var shadow = jQuery('<div id="shadow" />');
+    shadow.click(function(){
+        $('#shadow').remove();
+        $('#overlay').remove();
+    });
+    shadow.appendTo(document.body);
+    // Fuck javascript. Caching and autoplay attr mess up pausing.
+    var overlay = jQuery('<div id="overlay"><video id="myVideo" width="640" height="360" controls /></div>');
+            overlay.appendTo(document.body);
+            var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/" + m.properties.name + ".webm";
+            $("#myVideo").attr("src", source);
             map.ease.location({
                 lat: m.geometry.coordinates[1],
                 lon: m.geometry.coordinates[0]
@@ -78,10 +156,11 @@
     // Set a custom formatter for tooltips
     // Provide a function that returns html to be used in tooltip
     interaction.formatter(function(feature) {
-        var o =
-            '<img src="' + feature.properties.image + '">' +
-            '<h2>' + feature.properties.name + '</h2>' +
-            '</a>';
+    var o = 
+        '<h2>' + feature.properties.name + '</h2>' +
+        '<h3>' + feature.properties.address + '</h3>' + 
+        '<img class="descriptionImg" src="' + feature.properties.image + '"/>' + 
+         feature.properties.desc;
 
         return o;
     });
@@ -90,7 +169,7 @@
     map.centerzoom({
         lat: 42.361711128482284,
         lon: -71.06155264816285
-    }, 16);
+    }, 15);
 
 </script>
 </body>
