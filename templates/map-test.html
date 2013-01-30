@@ -137,11 +137,10 @@
     });
     shadow.appendTo(document.body);
     // Fuck javascript. Caching and autoplay attr mess up pausing.
-    var overlay = jQuery('<div id="overlay"><video id="myVideo" width="640" height="360" controls /></div>');
+    var overlay = jQuery('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
             overlay.appendTo(document.body);
             var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/" + m.properties.name + ".webm";
             $("#myVideo").attr("src", source);
-            $("#myVideo").attr("autoplay");
             map.ease.location({
                 lat: m.geometry.coordinates[1],
                 lon: m.geometry.coordinates[0]
