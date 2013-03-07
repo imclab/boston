@@ -11,10 +11,15 @@ class MapTestHandler(tornado.web.RequestHandler):
     def get(self):
         self.render("map.html")
 
+class AboutHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("about.html")
+
 
 handlers = [
             (r"/", MainHandler), 
             (r"/map",  MapTestHandler),
+            (r"/about",  AboutHandler),
             ]
 
 settings = dict(template_path=os.path.join(os.path.dirname(__file__), "templates"))

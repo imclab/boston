@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Facebox 1.2</title>
+	<link href="../src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="css/example.css" media="screen" rel="stylesheet" type="text/css" />
+	<script src="../lib/jquery.js" type="text/javascript"></script>
+	<script src="../src/facebox.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('a[rel*=facebox]').facebox({
+			loadingImage : '../src/loading.gif',
+			closeImage   : '../src/closelabel.png'
+		})
+	})
+	</script>
+</head>
+
+<body>
+	<div id="main">
+		<div id="shadow">
+			<div id="content">
+
+				<p> <a href="images/stairs.jpg" rel="facebox">View 'images/stairs.jpg' in the Facebox</a> </p>
+				
+			</div>
+		</div>
+	</div>
+	<script src="http://static.getclicky.com/21321.js" type="text/javascript"></script>
+	<noscript><p><img alt="Clicky" src="http://in.getclicky.com/21321-db3.gif" /></p></noscript>
+</body>
+</html>
