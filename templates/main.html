@@ -16,7 +16,23 @@
     <div id='logo'>Urban Strata</div>
 
     <script>
-    // Create the map after retrieving the features.json
+    function play(videoName) {
+        console.log('vid ' + videoName);
+        var shadow = jQuery('<div id="shadow" />');
+        shadow.click(function(){
+            $('#shadow').remove();
+            $('#overlay').remove();
+        });
+        shadow.appendTo(document.body);
+        // Fuck javascript. Caching and autoplay attr mess up pausing.
+        var overlay = jQuery('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
+        overlay.appendTo(document.body);
+        var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/vid/" + videoName + ".webm";
+        console.log(source);
+        $("#myVideo").attr("src", source);
+    }
+
+    // Create the map after retrieving features.json
     $.getJSON("static/features.json", function(features){
         // Create map
         var map = mapbox.map('map');
@@ -32,17 +48,6 @@
 
             // Add function that centers marker on click
             MM.addEvent(elem, 'click', function(e) {
-                var shadow = jQuery('<div id="shadow" />');
-                shadow.click(function(){
-                    $('#shadow').remove();
-                    $('#overlay').remove();
-                });
-                shadow.appendTo(document.body);
-                // Fuck javascript. Caching and autoplay attr mess up pausing.
-                var overlay = jQuery('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
-                overlay.appendTo(document.body);
-                var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/vid/" + m.properties.video + ".webm";
-                $("#myVideo").attr("src", source);
                 map.ease.location({
                     lat: m.geometry.coordinates[1],
                     lon: m.geometry.coordinates[0]
@@ -58,12 +63,17 @@
         // Set a custom formatter for tooltips
         // Provide a function that returns html to be used in tooltip
         interaction.formatter(function(feature) {
+            console.log('starting to make');
+            var video = feature.properties.video;
+            console.log(video.constructor == String);
+            console.log(video);
             var o = 
             '<h2>' + feature.properties.name + '</h2>' +
             '<h3>' + feature.properties.address + '</h3>' + 
             '<img class="descriptionImg" src="' + feature.properties.image + '"/>' + 
-            feature.properties.desc;
-
+            feature.properties.desc + 
+            '<p><h4><a id="' + feature.properties.video + '" onclick="play(this.id);" href="#">Play</a></h4></p>';
+            console.log('done making');
             return o;
         });
 
