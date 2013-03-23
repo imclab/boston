@@ -1,0 +1,82 @@
+[
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.070225,
+                42.349852
+            ]
+        },
+        "properties": {
+            "address": "130 Columbus Ave.",
+            "image": "/static/img/ParkPlazaTeaser_Small.jpg",
+            "video": "ParkPlaza",
+            "city": "Boston",
+            "name": "Armed and Ready",
+            "tag1": "Class Warfare",
+            "tag2": "Armory",
+            "tag3": "Fort",
+            "desc": "The striking Park Plaza Castle was once a fully stocked armory. Its original purpose may surprise you."
+        }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.0558333,
+                42.3685
+            ]
+        },
+        "properties": {
+            "address": "Commercial St.",
+            "image": "/static/img/MolassesFloodTeaser_small.jpg",
+            "video": "Molasses",
+            "city": "Boston",
+            "name": "A Sticky Situation",
+            "tag1": "Disaster",
+            "tag2": "Flood",
+            "tag3": "Accident",
+            "desc": "This quiet waterfront thoroughfare was the site of Boston’s strangest disaster."
+        }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.079175,
+                42.349572
+            ]
+        },
+        "properties": {
+            "address": "700 Boylston St.",
+            "image": "/static/img/DeFerrariTeaser_Small.jpg",
+            "video": "DeFerrari",
+            "city": "Boston",
+            "name": "From Fruit to Philanthropy",
+            "tag1": "Boston Public Library",
+            "tag2": "Philanthropy",
+            "tag3": "Financial District",
+            "desc": "John DeFerrari was an unassuming man, who owned a wholesale fruit store and kept to himself. Few would have guessed he was keeping a big secret."
+        }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.061918,
+                42.358179
+            ]
+        },
+        "properties": {
+            "address": "10 ½ Beacon St.",
+            "image": "/static/img/JamesAllen_Small.jpg",
+            "video": "JamesAllen",
+            "city": "Boston",
+            "name": "The Highwayman",
+            "tag1": "Crime",
+            "tag2": "Athenaeum",
+            "tag3": "Human Skin Book",
+            "desc": "The Boston Athenaeum houses one of the world’s most unusual books."
+        }
+    }
+]
