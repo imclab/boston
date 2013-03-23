@@ -1,0 +1,58 @@
+@font-face {
+    font-family: StMarie-Thin;
+    src: url('StMarie-Thin.otf');
+}
+
+h2 {
+    font-family: StMarie-Thin;
+    font-size: 24px;
+}
+
+h3 {
+    font-family: StMarie-Thin;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+#logo {
+    font-family: StMarie-Thin;
+    font-size: 48px;
+    position: fixed;
+    top: 60px;
+    left: 60px;
+    color: #ED9444;
+    z-index: 100000;
+}
+
+#shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter:alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+    z-index: 9000;
+}
+#overlay {
+    position: fixed;
+    top: 50%;
+    margin-left: -320px;
+    left: 50%;
+    margin-top: -180px;
+    width: 640px;
+    height: 360px;
+    background-color: #FFF;
+    filter:alpha(opacity=100) !important;
+    -moz-opacity: 1.0 !important;
+    -khtml-opacity: 1.0 !important;
+    opacity: 1.0 !important;
+    z-index: 10000 !important;
+}
+
+.descriptionBox {width:320px; height: 240px;}
+.descriptionImg {float:left; width:80px; height:60px; margin-right:6px; margin-top:6px;}
+.marker-tooltip {background-color: #0CF !important;}
