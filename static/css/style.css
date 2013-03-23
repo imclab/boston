@@ -3,6 +3,10 @@
     src: url('StMarie-Thin.otf');
 }
 
+* {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
 h2 {
     font-family: StMarie-Thin;
     font-size: 24px;
@@ -14,10 +18,63 @@ h3 {
     margin-bottom: 8px;
 }
 
+#header, 
+#navigation,
+#logo,
+#onscreen {
+    position: fixed;
+}
+
+#header {
+    top: 0px;
+    left: 0px;
+}
+
+#navigation {
+    background-color: #FFF;
+    padding:12px;
+    padding-right:24px;
+    top: 20px;
+    right: 50px;
+    background-color: #FFF;
+    filter:alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+
+a {
+    color: #ED9444;
+    text-decoration:none;
+}
+
+#navigation a {
+    margin-left: 18px;
+}
+
+#onscreen {
+    padding: 12px;
+    top: 160px;
+    left: 60px;
+    width:300px;
+    background-color: #FFF;
+    filter:alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+
+#onscreen div {
+    height: 80px;
+}
+
+#onscreen div p {
+    font-size: 12px;
+}
+
 #logo {
     font-family: StMarie-Thin;
     font-size: 48px;
-    position: fixed;
     top: 60px;
     left: 60px;
     color: #ED9444;
@@ -56,3 +113,4 @@ h3 {
 .descriptionBox {width:320px; height: 240px;}
 .descriptionImg {float:left; width:80px; height:60px; margin-right:6px; margin-top:6px;}
 .marker-tooltip {background-color: #0CF !important;}
+
