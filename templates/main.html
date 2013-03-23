@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- if you plan to use this example, download drag dealer from
+    https://code.google.com/p/dragdealer/ instead of hotlinking it like this -->
+    <script src='http://dragdealer.googlecode.com/svn/tags/0.9.5/dragdealer.js'></script>
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
+    <link href='/static/css/mapbox.css' rel='stylesheet' />
+    <link href='/static/css/map.css' rel='stylesheet' type='text/css' />
+
+    <style>
+    @font-face {
+        font-family: StMarie-Thin;
+        src: url('static/StMarie-Thin.otf');
+    }
+
+    h2 {
+        font-family: StMarie-Thin;
+        font-size: 24px;
+    }
+
+    h3 {
+        font-family: StMarie-Thin;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    #logo {
+        font-family: StMarie-Thin;
+        font-size: 48px;
+        position: fixed;
+        top: 60px;
+        left: 60px;
+        color: #ED9444;
+        z-index: 100000;
+    }
+
+    #shadow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        filter:alpha(opacity=80);
+        -moz-opacity: 0.8;
+        -khtml-opacity: 0.8;
+        opacity: 0.8;
+        z-index: 9000;
+    }
+    #overlay {
+        position: fixed;
+        top: 50%;
+        margin-left: -320px;
+        left: 50%;
+        margin-top: -180px;
+        width: 640px;
+        height: 360px;
+        background-color: #FFF;
+        filter:alpha(opacity=100) !important;
+        -moz-opacity: 1.0 !important;
+        -khtml-opacity: 1.0 !important;
+        opacity: 1.0 !important;
+        z-index: 10000 !important;
+    }
+    
+    .descriptionBox {width:320px; height: 240px;}
+    .descriptionImg {float:left; width:80px; height:60px; margin-right:6px; margin-top:6px;}
+    .marker-tooltip {background-color: #0CF !important;}
+    .zoomer {
+    }
+    /*
+    #z {
+        top:160px;
+        left:40px;
+        position:absolute;
+        z-index:999;
+    }
+    #zoom-bar {
+        width:30px;
+        position:relative;
+        height:200px;
+        background:#FFF;
+        border:1px solid #BBB;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+    }
+    .dragdealer .handle {
+        position:absolute;
+        cursor:pointer;
+        width:30px;
+        height:30px;
+        background:#222;
+        color:#fff;
+        font-weight:bold;
+        line-height:30px;
+        text-align:center;
+    }
+    .wrapper {
+        position:relative;
+    }
+    #pan .wrapper .panner {
+        background:#fff;
+        top:0;
+        position:absolute;
+        left:0;
+        padding:5px;
+        width:20px;
+        height:20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        text-align:center;
+        -webkit-user-select:none;
+    }
+    */
+    </style>
+</head>
+
+<body>
+
+    <!--
+    <div id='z'>
+        <div id='zoom-bar' class='dragdealer'>
+            <div id='handle' class="handle"></div>
+        </div>
+    </div>
+-->
+<div id='map'></div>
+<!-- <div id='overlay'>this is the box that will contain the list of POI's</div> -->
+<div id='logo'>Urban Strata</div>
+<script>
+    // GeoJSON input features
+    // The image and url properties of the features will be used in
+    // the tooltips
+    var features = [{
+        "geometry": { "type": "Point", "coordinates": [-71.070225, 42.349852]},
+        "properties": {
+            "address": "130 Columbus Ave.",
+            "image": "/static/img/ParkPlazaTeaser_Small.jpg",
+            "video": "ParkPlaza",
+            "city": "Boston",
+            "name": "Armed and Ready",
+            "tag1": "Class Warfare",
+            "tag2": "Armory",
+            "tag3": "Fort",
+            "desc": "The striking Park Plaza Castle was once a fully stocked armory. Its original purpose may surprise you."
+        }
+    }, {
+        "geometry": { "type": "Point", "coordinates": [-71.0558333, 42.3685]},
+        "properties": {
+            "address": "Commercial St.",
+            "image": "/static/img/MolassesFloodTeaser_small.jpg",
+            "video": "Molasses",
+            "city": "Boston",
+            "name": "A Sticky Situation",
+            "tag1": "Disaster",
+            "tag2": "Flood",
+            "tag3": "Accident",
+            "desc": "This quiet waterfront thoroughfare was the site of Boston’s strangest disaster."
+        }
+    }, {
+        "geometry": { "type": "Point", "coordinates": [-71.079175, 42.349572]},
+        "properties": {
+            "address": "700 Boylston St.",
+            "image": "/static/img/DeFerrariTeaser_Small.jpg",
+            "video": "DeFerrari",
+            "city": "Boston",
+            "name": "From Fruit to Philanthropy",
+            "tag1": "Boston Public Library",
+            "tag2": "Philanthropy",
+            "tag3": "Financial District",
+            "desc": "John DeFerrari was an unassuming man, who owned a wholesale fruit store and kept to himself. Few would have guessed he was keeping a big secret."
+        }
+    }, {
+        "geometry": { "type": "Point", "coordinates": [-71.061918, 42.358179]},
+        "properties": {
+            "address": "10 ½ Beacon St.",
+            "image": "/static/img/JamesAllen_Small.jpg",
+            "video": "JamesAllen",
+            "city": "Boston",
+            "name": "The Highwayman",
+            "tag1": "Crime",
+            "tag2": "Athenaeum",
+            "tag3": "Human Skin Book",
+            "desc": "The Boston Athenaeum houses one of the world’s most unusual books."
+        }
+    }
+    ];
+
+    // Create map
+    var map = mapbox.map('map');
+    map.addLayer(mapbox.layer().id('gavinh.UrbanStrata'));
+
+    // Create and add marker layer
+    var markerLayer = mapbox.markers.layer().features(features);
+
+    // Replace the markerLayer factory function
+    markerLayer.factory(function(m) {
+        // Create a marker using the simplestyle factory
+        var elem = mapbox.markers.simplestyle_factory(m);
+
+        // Add function that centers marker on click
+        MM.addEvent(elem, 'click', function(e) {
+            var shadow = jQuery('<div id="shadow" />');
+            shadow.click(function(){
+                $('#shadow').remove();
+                $('#overlay').remove();
+            });
+            shadow.appendTo(document.body);
+    // Fuck javascript. Caching and autoplay attr mess up pausing.
+    var overlay = jQuery('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
+    overlay.appendTo(document.body);
+    var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/vid/" + m.properties.video + ".webm";
+    $("#myVideo").attr("src", source);
+    map.ease.location({
+        lat: m.geometry.coordinates[1],
+        lon: m.geometry.coordinates[0]
+    }).zoom(map.zoom()).optimal();
+}); 
+
+        return elem;
+    }); 
+
+var interaction = mapbox.markers.interaction(markerLayer);
+map.addLayer(markerLayer);
+
+    // Set a custom formatter for tooltips
+    // Provide a function that returns html to be used in tooltip
+    interaction.formatter(function(feature) {
+        var o = 
+        '<h2>' + feature.properties.name + '</h2>' +
+        '<h3>' + feature.properties.address + '</h3>' + 
+        '<img class="descriptionImg" src="' + feature.properties.image + '"/>' + 
+        feature.properties.desc;
+
+        return o;
+    });
+
+    // // Zoom bar
+    // var zooms = 3;
+    // var handle = document.getElementById('handle');
+
+    // // Configure Dragdealer to update the map zoom
+    // var zoom_bar = new Dragdealer('zoom-bar', {
+    //     steps: zooms,
+    //     snap: true,
+    //     horizontal: false,
+    //     vertical: true,
+    //     callback: function(x, y) {
+    //         var z = y * (zooms - 1);
+    //         map.zoom(z, true);
+    //     }
+    // });
+    // // Round zoom so that numbers in the bar look presentable.
+    // map.addCallback('zoomed', function() {
+    //     var z = Math.round(map.zoom());
+    //     zoom_bar.setValue(0, z/2);
+    // });
+
+    // Set iniital center and zoom
+    map.centerzoom({
+        lat: 42.361711128482284,
+        lon: -71.06155264816285
+    }, 15);
+    map.setZoomRange(15,17);
+    map.ui.zoomer.add();
+    </script>
+</body>
+</html>

@@ -1,15 +1,19 @@
 # -*- coding: utf-8 -*-
-import tornado.web, tornado.ioloop
-from tornado.options import define, options
+'''
+
+
+@author gavinhackeling@gmail.com
+'''
 import os
+import tornado.web
+import tornado.ioloop
+from tornado.options import define
+from tornado.options import options
+
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render("map-test.html")
-
-class MapTestHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render("map.html")
+        self.render("main.html")
 
 class AboutHandler(tornado.web.RequestHandler):
     def get(self):
@@ -17,8 +21,7 @@ class AboutHandler(tornado.web.RequestHandler):
 
 
 handlers = [
-            (r"/", MainHandler), 
-            (r"/map",  MapTestHandler),
+            (r"/", MainHandler),
             (r"/about",  AboutHandler),
             ]
 
