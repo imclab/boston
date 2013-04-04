@@ -50,16 +50,49 @@ function play(videoName) {
 var map = mapbox.map('map');
 // Create the map after retrieving features.json
 $.getJSON("static/features.json", function(features){
+    
+    <style>
+.marker-image {
+    width:100px;
+    height:100px;
+    border:1px solid #000;
+    margin-left:-51px;
+    margin-top:-51px;
+    pointer-events:all;
+    position:absolute;
+}
+</style>
+    
     // Create map
     map.addLayer(mapbox.layer().id('gavinh.UrbanStrata'));
 
-    // Create and add marker layer
-    var markerLayer = mapbox.markers.layer().features(features);
+var map = mapbox.map('map');
+    map.addLayer(mapbox.layer().id('examples.map-vyofok3q'));
 
-    // Replace the markerLayer factory function
-    markerLayer.factory(function(m) {
-        // Create a marker using the simplestyle factory
-        var elem = mapbox.markers.simplestyle_factory(m);
+    // Create and add marker layer
+    var markerLayer = mapbox.markers.layer().features([{
+        "geometry": { "type": "Point", "coordinates": [-74.00, 40]},
+        "properties": { "image": "http://itp.nyu.edu/~ls3101/myblog/wp-content/uploads/2013/04/OrangePin.png" }
+    }, {
+        "geometry": { "type": "Point", "coordinates": [-75.00, 40]},
+        "properties": { "image": "http://itp.nyu.edu/~ls3101/myblog/wp-content/uploads/2013/04/OrangePin.png" }
+    }]).factory(function(f) {
+    // Define a new factory function. This takes a GeoJSON object
+    // as its input and returns an element - in this case an image -
+    // that represents the point.
+        var img = document.createElement('img');
+        img.className = 'marker-image';
+        img.setAttribute('src', f.properties.image);
+        return img;
+    });
+
+    map.addLayer(markerLayer)
+        .setExtent(markerLayer.extent());
+
+    // Attribute map
+    map.ui.attribution.add()
+        .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
+</script>
 
         // Add function that centers marker on click
         MM.addEvent(elem, 'click', function(e) {
