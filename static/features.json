@@ -68,6 +68,9 @@
             ]
         },
         "properties": {
+            "marker-shape": "pin",
+            "marker-size": "medium",
+            "marker-color": "#ED9444"
             "address": "10 ½ Beacon St.",
             "image": "/static/img/JamesAllen_Small.jpg",
             "video": "JamesAllen",
