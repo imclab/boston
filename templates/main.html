@@ -38,7 +38,6 @@ function play(videoName) {
         $('#overlay').remove();
     });
     shadow.appendTo(document.body);
-    // Fuck javascript. Caching and autoplay attr mess up pausing.
     var overlay = $('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
     overlay.appendTo(document.body);
     var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/vid/" + videoName + ".webm";
@@ -56,10 +55,15 @@ $.getJSON("static/features.json", function(features){
     // Create and add marker layer
     var markerLayer = mapbox.markers.layer().features(features);
 
+
     // Replace the markerLayer factory function
     markerLayer.factory(function(m) {
         // Create a marker using the simplestyle factory
         var elem = mapbox.markers.simplestyle_factory(m);
+	    
+	    // Custom style for the pin
+	    elem.className = 'marker-image';
+	    elem.setAttribute('src', 'static/img/orange_pin.png');
 
         // Add function that centers marker on click
         MM.addEvent(elem, 'click', function(e) {
@@ -116,26 +120,6 @@ $.getJSON("static/features.json", function(features){
                 '</div>';
         }
         $("#onscreen").html(list);
-
-        // .markers() gives a list of markers, along with their elements attached.
-        // var markers = markerLayer.markers(),
-        // construct an empty list to fill with onscreen markers
-        // inextent = [],
-        // // get the map extent - the top-left and bottom-right locations
-        // extent = map.extent();
-
-        // console.log(markers.length);
-        // // for each marker, consider whether it is currently visible by comparing
-        // // with the current map extent
-        // for (var i = 0; i < markers.length; i++) {
-        //     console.log(markers[i].data.propertoes.title);
-        //     if (extent.containsLocation(markers[i].location)) {
-        //         console.log(markers[i].data.propertoes.title);
-        //         inextent.push(markers[i].data.properties.title);
-        //     }
-        // }
-        // // display a list of markers.
-        // onscreen.innerHTML = inextent.join('\n');
 
     });
 

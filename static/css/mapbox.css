@@ -52,6 +52,16 @@
     border-width:18px;
     margin-left:-18px;
     }
+
+  .marker-image {
+      width: 30px;
+      height: 50px;
+      margin-left:-51px;
+      margin-top:-51px;
+      pointer-events:all;
+      position:absolute;
+  }
+  
 .zoomer,
 .map-legends,
 .map-tooltip,
