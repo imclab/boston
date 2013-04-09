@@ -78,5 +78,45 @@
             "tag3": "Human Skin Book",
             "desc": "The Boston Athenaeum houses one of the world’s most unusual books."
         }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.0608,
+                42.3764
+            ]
+        },
+        "properties": {
+            "address": "Monument Square",
+            "image": "/static/img/JamesAllen_Small.jpg",
+            "video": "JamesAllen",
+            "city": "Boston",
+            "name": "Joseph Warren",
+            "tag1": "Crime",
+            "tag2": "Athenaeum",
+            "tag3": "Human Skin Book",
+            "desc": "..."
+        }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.0564,
+                42.3599
+            ]
+        },
+        "properties": {
+            "address": "1 Faneuil Hall Square",
+            "image": "/static/img/JamesAllen_Small.jpg",
+            "video": "JamesAllen",
+            "city": "Boston",
+            "name": "Peter Faneuil",
+            "tag1": "Crime",
+            "tag2": "Athenaeum",
+            "tag3": "Human Skin Book",
+            "desc": "..."
+        }
     }
 ]

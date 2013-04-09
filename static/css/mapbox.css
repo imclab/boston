@@ -15,7 +15,10 @@
 
   border:2px solid #ccc;
   color:#000;
-  padding:20px;
+  padding-top:25px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 30px;
   -webkit-user-select:auto;
      -moz-user-select:auto;
           user-select:auto;
@@ -49,6 +52,16 @@
     border-width:18px;
     margin-left:-18px;
     }
+
+  .marker-image {
+      width: 30px;
+      height: 50px;
+      margin-left:-51px;
+      margin-top:-51px;
+      pointer-events:all;
+      position:absolute;
+  }
+  
 .zoomer,
 .map-legends,
 .map-tooltip,

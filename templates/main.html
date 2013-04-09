@@ -1,143 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!-- if you plan to use this example, download drag dealer from
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- if you plan to use this example, download drag dealer from
     https://code.google.com/p/dragdealer/ instead of hotlinking it like this -->
-    <script src='http://dragdealer.googlecode.com/svn/tags/0.9.5/dragdealer.js'></script>
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
-    <link href='/static/css/mapbox.css' rel='stylesheet' />
-    <link href='/static/css/map.css' rel='stylesheet' type='text/css' />
-    <link href='/static/css/style.css' rel='stylesheet' type='text/css' />
+    <script src='http://dragdealer.googlecode.com/svn/tags/0.9.5/dragdealer.js'></script>
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
+    <link href='/static/css/mapbox.css' rel='stylesheet' />
+    <link href='/static/css/map.css' rel='stylesheet' type='text/css' />
+    <link href='/static/css/style.css' rel='stylesheet' type='text/css' />
 </head>
 
 <body>
 
-    <style>
+    <style>
 
-    </style>
+    </style>
 
-    <div id='map'></div>
-    
-    <div id='onscreen'></div>
+    <div id='map'></div>
+    
+    <div id='onscreen'></div>
 
-    <div id='header'>
-        <div id='navigation'>
-            <a href="#">About</a>
-            <a href="#">Submit a Story</a>
-            <a href="#">Sources</a>
-            <div id='logo'>Urban Strata</div>
-        </div>
-    </div><!-- END header -->
+    <div id='header'>
+        <div id='navigation'>
+            <a href="#">About</a>
+            <a href="#">Submit a Story</a>
+            <a href="#">Sources</a>
+            <div id='logo'>Urban Strata</div>
+        </div>
+    </div><!-- END header -->
 <script>
 function play(videoName) {
-    console.log('vid ' + videoName);
-    var shadow = $('<div id="shadow" />');
-    shadow.click(function(){
-        $('#shadow').remove();
-        $('#overlay').remove();
-    });
-    shadow.appendTo(document.body);
-    // Fuck javascript. Caching and autoplay attr mess up pausing.
-    var overlay = $('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
-    overlay.appendTo(document.body);
-    var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/vid/" + videoName + ".webm";
-    console.log(source);
-    $("#myVideo").attr("src", source);
+    console.log('vid ' + videoName);
+    var shadow = $('<div id="shadow" />');
+    shadow.click(function(){
+        $('#shadow').remove();
+        $('#overlay').remove();
+    });
+    shadow.appendTo(document.body);
+    var overlay = $('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
+    overlay.appendTo(document.body);
+    var source = "http://ec2-184-73-119-136.compute-1.amazonaws.com/static/vid/" + videoName + ".webm";
+    console.log(source);
+    $("#myVideo").attr("src", source);
 }
 
 
 var map = mapbox.map('map');
 // Create the map after retrieving features.json
 $.getJSON("static/features.json", function(features){
-    // Create map
-    map.addLayer(mapbox.layer().id('gavinh.UrbanStrata'));
+    // Create map
+    map.addLayer(mapbox.layer().id('gavinh.UrbanStrata'));
 
-    // Create and add marker layer
-    var markerLayer = mapbox.markers.layer().features(features);
-
-    // Replace the markerLayer factory function
-    markerLayer.factory(function(m) {
-        // Create a marker using the simplestyle factory
-        var elem = mapbox.markers.simplestyle_factory(m);
-
-        // Add function that centers marker on click
-        MM.addEvent(elem, 'click', function(e) {
-            map.ease.location({
-                lat: m.geometry.coordinates[1],
-                lon: m.geometry.coordinates[0]
-            }).zoom(map.zoom()).optimal();
-        }); 
-        return elem;
-    }); 
-
-    // Add the markers layer
-    var interaction = mapbox.markers.interaction(markerLayer);
-    map.addLayer(markerLayer);
-
-    // Set a custom formatter for tooltips
-    // Provide a function that returns html to be used in tooltip
-    interaction.formatter(function(feature) {
-        var o = 
-        '<h2>' + feature.properties.name + '</h2>' +
-        '<h3>' + feature.properties.address + '</h3>' + 
-        '<img class="descriptionImg" src="' + feature.properties.image + '"/>' + 
-        feature.properties.desc + 
-        '<p><h4><a id="' + feature.properties.video + '" onclick="play(this.id);" href="#">Play</a></h4></p>';
-        return o;
-    });
-
-    // Set iniital map center and zoom level
-    map.centerzoom({
-        lat: 42.361711128482284,
-        lon: -71.06155264816285
-    }, 15);
-    map.setZoomRange(15,17);
-    map.ui.zoomer.add();
+    // Create and add marker layer
+    var markerLayer = mapbox.markers.layer().features(features);
 
 
-    var onscreen = document.getElementById('onscreen');
-    map.addCallback('drawn', function() {
-        var markers = markerLayer.markers();
-        var list = '';
-        for (var i = 0; i < markers.length; i++) {
-            list = list + 
-                '<div>' + 
-                '<img class="descriptionImg" src="' + markers[i].data.properties.image + '"/>' + 
-                '<a href="#" ' +
-                'onclick="map.ease.location({lat:' + 
-                markers[i].data.geometry.coordinates[1] + 
-                ', lon: ' + 
-                markers[i].data.geometry.coordinates[0] +
-                '}).zoom(map.zoom()).optimal()" >' +
-                markers[i].data.properties.name + 
-                '</a>' + 
-                '<p>' + markers[i].data.properties.desc + '</p>' + 
-                '</div>';
-        }
-        $("#onscreen").html(list);
+    // Replace the markerLayer factory function
+    markerLayer.factory(function(m) {
+        // Create a marker using the simplestyle factory
+        var elem = mapbox.markers.simplestyle_factory(m);
+	    
+	    // Custom style for the pin
+	    elem.className = 'marker-image';
+	    elem.setAttribute('src', 'static/img/orange_pin.png');
 
-        // .markers() gives a list of markers, along with their elements attached.
-        // var markers = markerLayer.markers(),
-        // construct an empty list to fill with onscreen markers
-        // inextent = [],
-        // // get the map extent - the top-left and bottom-right locations
-        // extent = map.extent();
+        // Add function that centers marker on click
+        MM.addEvent(elem, 'click', function(e) {
+            map.ease.location({
+                lat: m.geometry.coordinates[1],
+                lon: m.geometry.coordinates[0]
+            }).zoom(map.zoom()).optimal();
+        }); 
+        return elem;
+    }); 
 
-        // console.log(markers.length);
-        // // for each marker, consider whether it is currently visible by comparing
-        // // with the current map extent
-        // for (var i = 0; i < markers.length; i++) {
-        //     console.log(markers[i].data.propertoes.title);
-        //     if (extent.containsLocation(markers[i].location)) {
-        //         console.log(markers[i].data.propertoes.title);
-        //         inextent.push(markers[i].data.properties.title);
-        //     }
-        // }
-        // // display a list of markers.
-        // onscreen.innerHTML = inextent.join('\n');
+    // Add the markers layer
+    var interaction = mapbox.markers.interaction(markerLayer);
+    map.addLayer(markerLayer);
 
-    });
+    // Set a custom formatter for tooltips
+    // Provide a function that returns html to be used in tooltip
+    interaction.formatter(function(feature) {
+        var o = 
+        '<h2>' + feature.properties.name + '</h2>' +
+        '<h3>' + feature.properties.address + '</h3>' + 
+        '<img class="descriptionImg" src="' + feature.properties.image + '"/>' + 
+        feature.properties.desc + 
+        '<p><h4><a id="' + feature.properties.video + '" onclick="play(this.id);" href="#">Play</a></h4></p>';
+        return o;
+    });
+
+    // Set iniital map center and zoom level
+    map.centerzoom({
+        lat: 42.361711128482284,
+        lon: -71.06155264816285
+    }, 15);
+    map.setZoomRange(15,17);
+    map.ui.zoomer.add();
+
+
+    var onscreen = document.getElementById('onscreen');
+    map.addCallback('drawn', function() {
+        var markers = markerLayer.markers();
+        var list = '';
+        for (var i = 0; i < markers.length; i++) {
+            list = list + 
+                '<div>' + 
+                '<img class="descriptionImg" src="' + markers[i].data.properties.image + '"/>' + 
+                '<a href="#" ' +
+                'onclick="map.ease.location({lat:' + 
+                markers[i].data.geometry.coordinates[1] + 
+                ', lon: ' + 
+                markers[i].data.geometry.coordinates[0] +
+                '}).zoom(map.zoom()).optimal()" >' +
+                markers[i].data.properties.name + 
+                '</a>' + 
+                '<p>' + markers[i].data.properties.desc + '</p>' + 
+                '</div>';
+        }
+        $("#onscreen").html(list);
+
+    });
 
 });
 
