@@ -4,18 +4,23 @@
 }
 
 * {
-    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-family: "Calibri" Arial, Helvetica, Verdana, sans-serif;
 }
 
 h2 {
-    font-family: StMarie-Thin;
+    font-family: "Calibri";
+    font-weight: normal;
+    /*font-family: StMarie-Thin;*/
     font-size: 24px;
 }
 
 h3 {
-    font-family: StMarie-Thin;
+    /*font-family: StMarie-Thin;*/
+    font-family: "Calibri";
+    font-weight: normal;
     font-size: 16px;
     margin-bottom: 8px;
+
 }
 
 #header, 
@@ -36,7 +41,6 @@ h3 {
     padding-right:24px;
     top: 20px;
     right: 50px;
-    background-color: #FFF;
     filter:alpha(opacity=80);
     -moz-opacity: 0.8;
     -khtml-opacity: 0.8;
@@ -52,12 +56,14 @@ a {
     margin-left: 18px;
 }
 
+/* List View Box*/
 #onscreen {
     padding: 12px;
     top: 160px;
     left: 60px;
-    width:300px;
+    width:320px;
     background-color: #FFF;
+    border:2px solid #ccc;
     filter:alpha(opacity=80);
     -moz-opacity: 0.8;
     -khtml-opacity: 0.8;
@@ -70,11 +76,14 @@ a {
 
 #onscreen div p {
     font-size: 12px;
+    font-family: "Calibri";
+
+
 }
 
 #logo {
-    font-family: StMarie-Thin;
-    font-size: 48px;
+    font-family: "Calibri";
+    font-size: 55px;
     top: 60px;
     left: 60px;
     color: #ED9444;
