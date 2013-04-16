@@ -7,6 +7,8 @@
     <script src='http://dragdealer.googlecode.com/svn/tags/0.9.5/dragdealer.js'></script>
     <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
     <link href='/static/css/mapbox.css' rel='stylesheet' />
+
+
     <link href='/static/css/map.css' rel='stylesheet' type='text/css' />
     <link href='/static/css/style.css' rel='stylesheet' type='text/css' />
 </head>
@@ -87,7 +89,7 @@ $.getJSON("static/features.json", function(features){
         '<h2>' + feature.properties.name + '</h2>' +
         '<h3>' + feature.properties.address + '</h3>' + 
         '<img class="descriptionImg" src="' + feature.properties.image + '"/>' + 
-        feature.properties.desc + 
+        '<div class="descriptionText" >' + feature.properties.desc + "</div>" + 
         '<p><h4><a id="' + feature.properties.video + '" onclick="play(this.id);" href="#">Play</a></h4></p>';
         return o;
     });
@@ -108,16 +110,17 @@ $.getJSON("static/features.json", function(features){
         for (var i = 0; i < markers.length; i++) {
             list = list + 
                 '<div>' + 
-                '<img class="descriptionImg" src="' + markers[i].data.properties.image + '"/>' + 
+                '<img class="descriptionImgList" src="' + markers[i].data.properties.image + '"/>' + 
                 '<a href="#" ' +
                 'onclick="map.ease.location({lat:' + 
                 markers[i].data.geometry.coordinates[1] + 
                 ', lon: ' + 
                 markers[i].data.geometry.coordinates[0] +
                 '}).zoom(map.zoom()).optimal()" >' +
-                markers[i].data.properties.name + 
+
+                '<div class="descriptionListName" >' + markers[i].data.properties.name + "</div>" +
                 '</a>' + 
-                '<p>' + markers[i].data.properties.desc + '</p>' + 
+                '<div class="list-desc">' + markers[i].data.properties.desc + "</div>" +  
                 '</div>';
         }
         $("#onscreen").html(list);
