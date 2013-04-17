@@ -26,7 +26,8 @@ handlers = [
             (r"/about",  AboutHandler),
             ]
 
-settings = dict(template_path=os.path.join(os.path.dirname(__file__), "templates"))
+# Nginx should serve /static, not Tornado
+settings = dict(debug = "true", template_path = os.path.join(os.path.dirname(__file__), "templates"), static_path = os.path.join(os.path.dirname(__file__), "static"))
 application = tornado.web.Application(handlers, **settings)
 
 if __name__ == "__main__":
