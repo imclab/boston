@@ -8,7 +8,6 @@
     <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
     <link href='/static/css/mapbox.css' rel='stylesheet' />
 
-
     <link href='/static/css/map.css' rel='stylesheet' type='text/css' />
     <link href='/static/css/style.css' rel='stylesheet' type='text/css' />
 </head>
@@ -16,7 +15,6 @@
 <body>
 
     <style>
-
     </style>
 
     <div id='map'></div>
@@ -90,7 +88,7 @@ $.getJSON("static/features.json", function(features){
         '<h3>' + feature.properties.address + '</h3>' + 
         '<img class="descriptionImg" src="' + feature.properties.image + '"/>' + 
         '<div class="descriptionText" >' + feature.properties.desc + "</div>" + 
-        '<p><h4><a id="' + feature.properties.video + '" onclick="play(this.id);" href="#">Play</a></h4></p>';
+        '<h4><a id="' + feature.properties.video + '" onclick="play(this.id);" href="#">Play</a></h4>';
         return o;
     });
 
@@ -101,7 +99,6 @@ $.getJSON("static/features.json", function(features){
     }, 15);
     map.setZoomRange(15,17);
     map.ui.zoomer.add();
-
 
     var onscreen = document.getElementById('onscreen');
     map.addCallback('drawn', function() {
