@@ -5,20 +5,20 @@
 
 
 * {
-    font-family: "freight-sans-pro", Arial, Verdana, sans-serif;
+    font-family: "jaf-facitweb", Arial, Verdana, sans-serif;
 }
 
 
 /*h2 is for speech bubble video name */
 h2 {
-    font-family: "freight-sans-pro", Arial, Verdana, sans-serif;
+    font-family: "jaf-facitweb", Arial, Verdana, sans-serif;
     font-weight: normal;
     font-size: 24px;
 }
 
 /*h3 is for address*/
 h3 {
-    font-family: "freight-sans-pro", Arial, Verdana, sans-serif;
+    font-family: "jaf-facitweb", Arial, Verdana, sans-serif;
     font-weight: normal;
     font-size: 16px;
     margin-bottom: 8px;
@@ -92,7 +92,7 @@ a {
 
 #onscreen>div p {
     font-size: 12px;
-    font-family: "freight-sans-pro";
+    font-family: "jaf-facitweb";
 
 
 }
