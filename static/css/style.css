@@ -1,24 +1,24 @@
 @font-face {
-    font-family: "freight-text-pro", "jaf-facitweb", "freight-sans-pro", "jaf-lapture";
+    font-family: "freight-text-pro", "liberation-serif", "freight-sans-pro", "jaf-lapture";
 }
 
 
 
 * {
-    font-family: "jaf-facitweb", Arial, Verdana, sans-serif;
+    font-family: "liberation-serif", Arial, Verdana, sans-serif;
 }
 
 
 /*h2 is for speech bubble video name */
 h2 {
-    font-family: "jaf-facitweb", Arial, Verdana, sans-serif;
+    font-family: "liberation-serif", Arial, Verdana, sans-serif;
     font-weight: normal;
     font-size: 24px;
 }
 
 /*h3 is for address*/
 h3 {
-    font-family: "jaf-facitweb", Arial, Verdana, sans-serif;
+    font-family: "liberation-serif", Arial, Verdana, sans-serif;
     font-weight: normal;
     font-size: 16px;
     margin-bottom: 8px;
@@ -65,7 +65,7 @@ a {
 
 /*below is for navigation tab color and font*/
 #navigation a {
-    font-family: "freight-text-pro", Times, Serif;
+    font-family: "liberation-serif", Times, Serif;
     margin-left: 18px;
 }
 
@@ -92,13 +92,13 @@ a {
 
 #onscreen>div p {
     font-size: 12px;
-    font-family: "jaf-facitweb";
+    font-family: "liberation-serif";
 
 
 }
 
 #logo {
-    font-family: "freight-text-pro";
+    font-family: "liberation-serif";
     font-size: 55px;
     top: 60px;
     left: 60px;
@@ -141,7 +141,7 @@ a {
 
 /*below is for speechbubble video description*/
 .descriptionText {
-    font-family: "freight-text-pro", Times, Serif;
+    font-family: "liberation-serif", Times, Serif;
     padding-top:8px;}
 
 .descriptionImgList {float:left; width:80px; height:60px; margin-right:20px;}
@@ -149,7 +149,7 @@ a {
 
 /*below is for the description paragraph on the list*/
 .list-desc {
-    font-family: "freight-text-pro", Times, Serif;
+    font-family: "liberation-serif", Times, Serif;
     font-size:12px; 
     margin-left:97px; }
 
