@@ -50,7 +50,6 @@ h4 {
 #navigation {
     background-color: #FFF;
     padding:12px;
-    padding-right:24px;
     top: 60px;
     right: 50px;
     filter:alpha(opacity=80);
@@ -69,7 +68,7 @@ a {
 /*below is for navigation tab color and font*/
 #navigation a {
     font-family: "Bebas Neue", Times, Serif;
-    font-size: 24px;
+    font-size: 20px;
     margin-left: 10px;
 }
 
