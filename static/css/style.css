@@ -51,7 +51,7 @@ h4 {
     background-color: #FFF;
     padding:12px;
     padding-right:24px;
-    top: 20px;
+    top: 60px;
     right: 50px;
     filter:alpha(opacity=80);
     -moz-opacity: 0.8;
@@ -69,7 +69,7 @@ a {
 /*below is for navigation tab color and font*/
 #navigation a {
     font-family: "Bebas Neue", Times, Serif;
-    margin-left: 18px;
+    margin-left: 24px;
 }
 
 /* List View Box*/
