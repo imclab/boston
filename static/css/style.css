@@ -49,13 +49,14 @@ h4 {
 
 #navigation {
     background-color: #FFF;
-    padding:12px;
+    padding-left: 6px;
     top: 60px;
     right: 50px;
     filter:alpha(opacity=80);
     -moz-opacity: 0.8;
     -khtml-opacity: 0.8;
     opacity: 0.8;
+    border:2px solid #ccc;
 }
 
 a {
