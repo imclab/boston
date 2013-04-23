@@ -60,7 +60,7 @@ h4 {
 }
 
 a {
-    
+    font-family: "Bebas Neue";
     color: #ED9444;
     text-decoration:none;
 }
@@ -145,7 +145,8 @@ a {
 /*below is for speechbubble video description*/
 .descriptionText {
     font-family: "liberation-serif", Times, Serif;
-    padding-top:8px;}
+    padding-top:8px;
+    color: #494949;}
 
 .descriptionImgList {float:left; width:80px; height:60px; margin-right:20px;}
 .descriptionList {}
@@ -153,7 +154,8 @@ a {
 /*below is for the description paragraph on the list*/
 .list-desc {
     font-family: "liberation-serif", Times, Serif;
-    font-size:12px; 
+    font-size:12px;
+    color: #494949;
     margin-left:97px; }
 
 /*below is list title which is orange color*/  
