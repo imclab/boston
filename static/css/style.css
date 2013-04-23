@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "BebasNeue", "freight-text-pro", "liberation-serif", "freight-sans-pro", "jaf-lapture";
+    font-family: "Bebas Neue", "liberation-serif";
     src: url('BebasNeue.otf');
 }
 
@@ -12,14 +12,14 @@
 
 /*h2 is for speech bubble video name */
 h2 {
-    font-family: "BebasNeue", Arial, Verdana, sans-serif;
+    font-family: "Bebas Neue", Arial, Verdana, sans-serif;
     font-weight: normal;
     font-size: 24px;
 }
 
 /*h3 is for address*/
 h3 {
-    font-family: "BebasNeue", Arial, Verdana, sans-serif;
+    font-family: "Bebas Neue", Arial, Verdana, sans-serif;
     font-weight: normal;
     font-size: 16px;
     margin-bottom: 8px;
@@ -156,7 +156,7 @@ a {
 
 /*below is list title which is orange color*/  
 .descriptionListName { 
-    font-family: "BebasNeue";
+    font-family: "Bebas Neue";
     font-size: 20px;
     padding-top: 0px;}
 
