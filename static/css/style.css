@@ -6,7 +6,7 @@
 
 
 * {
-    font-family: "Bebas Neue", Arial, Verdana, sans-serif;
+    font-family: "liberation-serif", Arial, Verdana, sans-serif;
 }
 
 
@@ -68,7 +68,7 @@ a {
 
 /*below is for navigation tab color and font*/
 #navigation a {
-    font-family: "liberation-serif", Times, Serif;
+    font-family: "Bebas Neue", Times, Serif;
     margin-left: 18px;
 }
 
