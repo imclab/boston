@@ -36,7 +36,7 @@
             "tag1": "Disaster",
             "tag2": "Flood",
             "tag3": "Accident",
-            "desc": "This quiet waterfront thoroughfare was the site of Boston’s strangest disaster."
+            "desc": "This quiet waterfront thoroughfare was the site of a bizarre and lethal disaster."
         }
     },
     {
@@ -72,11 +72,11 @@
             "image": "/static/img/JamesAllen_Small.jpg",
             "video": "JamesAllen",
             "city": "Boston",
-            "name": "The Highwayman",
+            "name": "The Skin Off His Back",
             "tag1": "Crime",
             "tag2": "Athenaeum",
             "tag3": "Human Skin Book",
-            "desc": "The Boston Athenaeum houses one of the world’s most unusual books."
+            "desc": "Maybe you can judge a book by its cover, at least when it comes to The Boston Athenaeum’s gruesome treasure."
         }
     },
     {
