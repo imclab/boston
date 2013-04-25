@@ -16,7 +16,7 @@
             "tag1": "Class Warfare",
             "tag2": "Armory",
             "tag3": "Fort",
-            "desc": "The striking Park Plaza Castle was once a fully stocked armory. Its original purpose may surprise you."
+            "desc": "A fortified castle in the middle of the city—complete with moat—designed to keep fellow citizens at bay."
         }
     },
     {
@@ -56,7 +56,7 @@
             "tag1": "Boston Public Library",
             "tag2": "Philanthropy",
             "tag3": "Financial District",
-            "desc": "John DeFerrari was an unassuming man, who owned a wholesale fruit store and kept to himself. Few would have guessed he was keeping a big secret."
+            "desc": "John DeFerrari had his pockets sewn shut—except when he handed out millions."
         }
     },
     {
@@ -76,7 +76,7 @@
             "tag1": "Crime",
             "tag2": "Athenaeum",
             "tag3": "Human Skin Book",
-            "desc": "Maybe you can judge a book by its cover, at least when it comes to The Boston Athenaeum’s gruesome treasure."
+            "desc": "Maybe you can judge a book by its cover, at least when it comes to the Boston Athenaeum’s gruesome treasure."
         }
     },
     {
@@ -96,7 +96,7 @@
             "tag1": "Crime",
             "tag2": "Athenaeum",
             "tag3": "Human Skin Book",
-            "desc": "..."
+            "desc": "Paul Revere plays detective and solves the mystery of Bunker Hill."
         }
     },
     {
@@ -116,7 +116,7 @@
             "tag1": "Crime",
             "tag2": "Athenaeum",
             "tag3": "Human Skin Book",
-            "desc": "..."
+            "desc": "A mean-spirited will turns out to benefit all of Boston."
         }
     }
 ]

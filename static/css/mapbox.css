@@ -5,7 +5,8 @@
 .marker-popup {
   position:relative;
   left:-50%;
-  max-width:400px;
+  /*max-width:400px;*/
+  width: 380px;
   background:#fff;
                 filter:alpha(opacity=80);
                 -moz-opacity: 0.8;
@@ -15,10 +16,10 @@
 
   border:2px solid #ccc;
   color:#000;
-  padding-top:25px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 30px;
+  padding-top:15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  padding-left: 20px;
   -webkit-user-select:auto;
      -moz-user-select:auto;
           user-select:auto;

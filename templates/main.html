@@ -110,8 +110,8 @@ $.getJSON("static/features.json", function(features){
         var list = '';
         for (var i = 0; i < markers.length; i++) {
             list = list + 
-                '<div>' + 
-                '<img class="descriptionImgList" src="' + markers[i].data.properties.image + '"/>' + 
+//                 '<div>' + 
+//                 '<img class="descriptionImgList" src="' + markers[i].data.properties.image + '"/>' + 
                 '<a href="#" ' +
                 'onclick="map.ease.location({lat:' + 
                 markers[i].data.geometry.coordinates[1] + 
