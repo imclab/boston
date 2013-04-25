@@ -27,6 +27,7 @@
           box-shadow: 2px 2px 5px -2px #ccc;
   -webkit-border-radius:3px;
           border-radius:3px;
+  z-index: 9999999 !important;
   }
   
 
@@ -40,18 +41,21 @@
     left:50%;
     position:absolute;
     pointer-events:none;
+    z-index: 9999999 !important;
     }
 
   .marker-popup:after {
     border-top-color:#fff;
     border-width:15px;
     margin-left:-15px;
+    z-index: 9999999 !important;
     }
 
   .marker-popup:before {
     border-top-color:#ccc;
     border-width:18px;
     margin-left:-18px;
+    z-index: 9999999 !important;
     }
 
   .marker-image {

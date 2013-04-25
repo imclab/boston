@@ -90,6 +90,7 @@ a {
     overflow-y: scroll;
     max-height: 550px;
     min-height: 200px;
+    z-index:100;
 }
 
 #onscreen>div {
