@@ -118,5 +118,25 @@
             "tag3": "Human Skin Book",
             "desc": "A mean-spirited will turns out to benefit all of Boston."
         }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.065831,
+                42.355032
+            ]
+        },
+        "properties": {
+            "address": "Boston Common",
+            "image": "/static/img/JamesAllen_Small.jpg",
+            "video": "Stockmaker",
+            "city": "Boston",
+            "name": "Stockmaker",
+            "tag1": "Colonial",
+            "tag2": "Stocks",
+            "tag3": "Punishment",
+            "desc": "A mean-spirited will turns out to benefit all of Boston."
+        }
     }
 ]
