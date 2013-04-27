@@ -92,10 +92,10 @@
             "image": "/static/img/JamesAllen_Small.jpg",
             "video": "JamesAllen",
             "city": "Boston",
-            "name": "Joseph Warren",
-            "tag1": "Crime",
-            "tag2": "Athenaeum",
-            "tag3": "Human Skin Book",
+            "name": "A Fallen Patriot",
+            "tag1": "Revolutionary War",
+            "tag2": "Joseph Warren",
+            "tag3": "Paul Revere",
             "desc": "Paul Revere plays detective and solves the mystery of Bunker Hill."
         }
     },
@@ -110,12 +110,12 @@
         "properties": {
             "address": "1 Faneuil Hall Square",
             "image": "/static/img/JamesAllen_Small.jpg",
-            "video": "JamesAllen",
+            "video": "PeterFaneuil",
             "city": "Boston",
-            "name": "Peter Faneuil",
-            "tag1": "Crime",
-            "tag2": "Athenaeum",
-            "tag3": "Human Skin Book",
+            "name": "Inheritance",
+            "tag1": "Faneuil Hall",
+            "tag2": "Peter Faneuil",
+            "tag3": "Law",
             "desc": "A mean-spirited will turns out to benefit all of Boston."
         }
     },
@@ -132,11 +132,11 @@
             "image": "/static/img/JamesAllen_Small.jpg",
             "video": "Stockmaker",
             "city": "Boston",
-            "name": "Stockmaker",
+            "name": "Puritan Punishment",
             "tag1": "Colonial",
             "tag2": "Stocks",
             "tag3": "Punishment",
-            "desc": "A mean-spirited will turns out to benefit all of Boston."
+            "desc": "Colonial Magistrates had a sense of humor."
         }
     }
 ]
