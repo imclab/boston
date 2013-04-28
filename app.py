@@ -12,6 +12,10 @@ from tornado.options import define
 from tornado.options import options
 
 
+class LayoutHandler(tornado.web.RequestHandler):
+	def get(self):
+		self.render("layout.html")
+
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.render("main.html")
@@ -20,10 +24,15 @@ class AboutHandler(tornado.web.RequestHandler):
     def get(self):
         self.render("about.html")
 
+class SourcesHandler(tornado.web.RequestHandler):
+ 	def get(self):
+ 		self.render("sources.html")
+
 
 handlers = [
             (r"/", MainHandler),
             (r"/about",  AboutHandler),
+            (r"/sources", SourcesHandler),
             ]
 
 # Nginx should serve /static, not Tornado
