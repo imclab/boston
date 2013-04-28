@@ -70,7 +70,7 @@
         "properties": {
             "address": "10 ½ Beacon St.",
             "image": "/static/img/JamesAllen_Small.jpg",
-            "video": "JamesAllen",
+            "video": "JamesAllen1",
             "city": "Boston",
             "name": "The Skin Off His Back",
             "tag1": "Crime",
@@ -90,7 +90,7 @@
         "properties": {
             "address": "Monument Square",
             "image": "/static/img/JamesAllen_Small.jpg",
-            "video": "JamesAllen",
+            "video": "JosephWarren",
             "city": "Boston",
             "name": "A Fallen Patriot",
             "tag1": "Revolutionary War",
