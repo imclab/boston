@@ -28,7 +28,7 @@ html {
 body{
     height: 100%;
     background-image: url("/static/img/tex1.jpg");
-    background-color: #aaaaaa;
+    background-color: #A8B2B2;
 }
 
 @font-face {
@@ -62,6 +62,7 @@ h3 {
 
 h4 {
     font-family: "liberation-serif";
+    font-size: 14px;
     padding-top: 10px;
     padding-left: 250px;
 }
@@ -204,3 +205,24 @@ a {
     padding-right: 10px;}
 
 
+#about {
+    position: absolute;
+    top: 200px;
+    /*left:100px;*/
+    padding-right: 200px;
+
+}
+
+#about a {
+     font-family: "liberation-serif";
+     font-size: 14px;
+     color: #000000;
+     /*text-decoration: dotted;*/
+
+}
+
+#about a:hover{
+     text-decoration: dotted;
+     color: #888888;
+
+}
