@@ -27,8 +27,9 @@ html {
 
 body{
     height: 100%;
-    background-image: url("/static/img/tex1.jpg");
     background-color: #A8B2B2;
+    background-image: url("/static/img/tex1.jpg");
+    
 }
 
 @font-face {
@@ -67,6 +68,15 @@ h4 {
     padding-left: 250px;
 }
 
+
+h5 {
+    font-family: "bebas-neue", Arial, Verdana, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 250px;
+
+}
 
 #header, 
 #navigation,
@@ -226,3 +236,11 @@ a {
      color: #888888;
 
 }
+
+#sources {
+   position: absolute;
+    top: 200px;
+    /*left:100px;*/
+    padding-right: 200px; 
+    bottom: -500px;
+}   
