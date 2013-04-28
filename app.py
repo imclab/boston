@@ -12,9 +12,9 @@ from tornado.options import define
 from tornado.options import options
 
 
-class LayoutHandler(tornado.web.RequestHandler):
-	def get(self):
-		self.render("layout.html")
+# class LayoutHandler(tornado.web.RequestHandler):
+# 	def get(self):
+# 		self.render("main.html")
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
