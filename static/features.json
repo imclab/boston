@@ -110,7 +110,7 @@
         "properties": {
             "address": "1 Faneuil Hall Square",
             "image": "/static/img/JamesAllen_Small.jpg",
-            "video": "PeterFaneuil",
+            "video": "PeterFaneuil1",
             "city": "Boston",
             "name": "Inheritance",
             "tag1": "Faneuil Hall",
@@ -137,6 +137,46 @@
             "tag2": "Stocks",
             "tag3": "Punishment",
             "desc": "Colonial Magistrates had a sense of humor."
+        }
+    },
+     {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.06028,
+                42.35833
+            ]
+        },
+        "properties": {
+            "address": "33 Beacon Street",
+            "image": "/static/img/JamesAllen_Small.jpg",
+            "video": "GeorgeParkman",
+            "city": "Boston",
+            "name": "The Parkman House",
+            "tag1": "Harvard",
+            "tag2": "Brahmin",
+            "tag3": "Murder",
+            "desc": "What dark crime haunts the Boston Mayor's residence?"
+        }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.0561275,
+                42.3519439
+            ]
+        },
+        "properties": {
+            "address": "Essex Street and Atlantic Avenue",
+            "image": "/static/img/JamesAllen_Small.jpg",
+            "video": "HenryKnox",
+            "city": "Boston",
+            "name": "Henry Knox",
+            "tag1": "Bookstore",
+            "tag2": "Henry Knox",
+            "tag3": "Revolutionary War",
+            "desc": "An early Boston bookseller proves the adage knowledge is power."
         }
     }
 ]
