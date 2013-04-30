@@ -89,7 +89,7 @@
         },
         "properties": {
             "address": "Monument Square",
-            "image": "/static/img/JamesAllen_Small.jpg",
+            "image": "/static/img/JosephWarrenTeaser.jpg",
             "video": "JosephWarren",
             "city": "Boston",
             "name": "A Fallen Patriot",
@@ -129,7 +129,7 @@
         },
         "properties": {
             "address": "Boston Common",
-            "image": "/static/img/StockmakerTeaser.jpg",
+            "image": "/static/img/StockmakerTeaser1.jpg",
             "video": "Stockmaker",
             "city": "Boston",
             "name": "Puritan Punishment",
