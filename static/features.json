@@ -29,7 +29,7 @@
         },
         "properties": {
             "address": "Commercial St.",
-            "image": "/static/img/MolassesFloodTeaser_small.jpg",
+            "image": "/static/img/MolassesTeaser.jpg",
             "video": "Molasses",
             "city": "Boston",
             "name": "A Sticky Situation",
@@ -109,7 +109,7 @@
         },
         "properties": {
             "address": "1 Faneuil Hall Square",
-            "image": "/static/img/JamesAllen_Small.jpg",
+            "image": "/static/img/PeterFaneuilTeaser.jpg",
             "video": "PeterFaneuil1",
             "city": "Boston",
             "name": "Inheritance",
@@ -169,7 +169,7 @@
         },
         "properties": {
             "address": "Essex Street and Atlantic Avenue",
-            "image": "/static/img/JamesAllen_Small.jpg",
+            "image": "/static/img/HenryKnoxTeaser.jpg",
             "video": "HenryKnox",
             "city": "Boston",
             "name": "Henry Knox",
