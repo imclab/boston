@@ -143,13 +143,13 @@
         "geometry": {
             "type": "Point",
             "coordinates": [
-                -71.06028,
-                42.35833
+                -71.064860,
+                42.357431
             ]
         },
         "properties": {
             "address": "33 Beacon Street",
-            "image": "/static/img/ParkmanTeaser.jpg",
+            "image": "/static/img/ParkmanTeaser2.jpg",
             "video": "GeorgeParkman",
             "city": "Boston",
             "name": "The Parkman House",
