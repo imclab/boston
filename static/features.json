@@ -29,7 +29,7 @@
         },
         "properties": {
             "address": "Commercial St.",
-            "image": "/static/img/MolassesFloodTeaser_small.jpg",
+            "image": "/static/img/MolassesTeaser.jpg",
             "video": "Molasses",
             "city": "Boston",
             "name": "A Sticky Situation",
@@ -50,7 +50,7 @@
         "properties": {
             "address": "700 Boylston St.",
             "image": "/static/img/DeFerrariTeaser_Small.jpg",
-            "video": "DeFerrari",
+            "video": "JohnDeFerrari",
             "city": "Boston",
             "name": "From Fruit to Philanthropy",
             "tag1": "Boston Public Library",
@@ -89,7 +89,7 @@
         },
         "properties": {
             "address": "Monument Square",
-            "image": "/static/img/JamesAllen_Small.jpg",
+            "image": "/static/img/JosephWarrenTeaser.jpg",
             "video": "JosephWarren",
             "city": "Boston",
             "name": "A Fallen Patriot",
@@ -109,8 +109,8 @@
         },
         "properties": {
             "address": "1 Faneuil Hall Square",
-            "image": "/static/img/JamesAllen_Small.jpg",
-            "video": "PeterFaneuil",
+            "image": "/static/img/PeterFaneuilTeaser.jpg",
+            "video": "PeterFaneuil1",
             "city": "Boston",
             "name": "Inheritance",
             "tag1": "Faneuil Hall",
@@ -129,7 +129,7 @@
         },
         "properties": {
             "address": "Boston Common",
-            "image": "/static/img/JamesAllen_Small.jpg",
+            "image": "/static/img/StockmakerTeaser.jpg",
             "video": "Stockmaker",
             "city": "Boston",
             "name": "Puritan Punishment",
@@ -137,6 +137,46 @@
             "tag2": "Stocks",
             "tag3": "Punishment",
             "desc": "Colonial Magistrates had a sense of humor."
+        }
+    },
+     {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.064860,
+                42.357431
+            ]
+        },
+        "properties": {
+            "address": "33 Beacon Street",
+            "image": "/static/img/ParkmanTeaser2.jpg",
+            "video": "GeorgeParkman",
+            "city": "Boston",
+            "name": "The Parkman House",
+            "tag1": "Harvard",
+            "tag2": "Brahmin",
+            "tag3": "Murder",
+            "desc": "What dark crime haunts the Boston Mayor's residence?"
+        }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.0561275,
+                42.3519439
+            ]
+        },
+        "properties": {
+            "address": "Essex Street and Atlantic Avenue",
+            "image": "/static/img/HenryKnoxTeaser.jpg",
+            "video": "HenryKnox",
+            "city": "Boston",
+            "name": "Henry Knox",
+            "tag1": "Bookstore",
+            "tag2": "Henry Knox",
+            "tag3": "Revolutionary War",
+            "desc": "An early Boston bookseller proves the adage knowledge is power."
         }
     }
 ]
