@@ -133,10 +133,12 @@ a {
     max-height: 550px;
     min-height: 200px;
     z-index:100;
+
 }
 
 #onscreen>div {
     /*height: 20px;*/
+
 }
 
 #onscreen>div p {
@@ -237,10 +239,12 @@ a {
 
 }
 
-#sources {
+.sources {
    position: absolute;
     top: 200px;
     /*left:100px;*/
     padding-right: 200px; 
-    bottom: -500px;
+    padding-bottom: 550px;
+    bottom: -300px;
+    overflow: scroll;
 }   
