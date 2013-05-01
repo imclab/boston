@@ -55,13 +55,14 @@ $.getJSON("static/features.json", function(features){
         return elem;
     }); 
 
+
     // Add the markers layer
     var interaction = mapbox.markers.interaction(markerLayer);
     map.addLayer(markerLayer);
 
     // Set a custom formatter for tooltips
     // Provide a function that returns html to be used in tooltip
-	// this is related popup and pin
+	// this is relating popup and pin
 	interaction.showOnHover(false);
     interaction.formatter(function(feature) {
         var o = 
@@ -87,26 +88,58 @@ $.getJSON("static/features.json", function(features){
 
         var list = '';
 
-        for (var i = 0; i < markers.length; i++) {
-            list = list + 
-//                 '<div>' + 
-//                 '<img class="descriptionImgList" src="' + markers[i].data.properties.image + '"/>' + 
-                '<a href="#" ' +
-                'onclick="map.ease.location({lat:' + 
-                markers[i].data.geometry.coordinates[1] + 
-                ', lon: ' + 
-                markers[i].data.geometry.coordinates[0] +
-                '}).zoom(map.zoom()).optimal()"' + '>' +
+//         for (var i = 0; i < markers.length; i++) {
+//             list = list + 
+// //                 '<div>' + 
+// //                 '<img class="descriptionImgList" src="' + markers[i].data.properties.image + '"/>' + 
+//                 '<a href="#" ' +
+//                 'onclick="map.ease.location({lat:' + 
+//                 markers[i].data.geometry.coordinates[1] + 
+//                 ', lon: ' + 
+//                 markers[i].data.geometry.coordinates[0] +
+//                 '}).zoom(map.zoom()).optimal()"' + '>' +
 
-                '<div class="descriptionListName" >' + markers[i].data.properties.name + "</div>" +
-                '</a>' + 
-                '<div class="list-desc">' + markers[i].data.properties.desc + "</div>" +  
-                '</div>';
-        }
-        $("#onscreen").html(list);
+//                 '<div class="descriptionListName" >' + markers[i].data.properties.name + "</div>" +
+//                 '</a>' + 
+//                 '<div class="list-desc">' + markers[i].data.properties.desc + "</div>" +  
+//                 '</div>';
+//         }
+//         $("#onscreen").html(list);
+
+		for(var m in markers) {
+			var marker = markers[m];
+			$(marker.element).click(function(e) { e.stopPropagation(); });
+			var link = $("<a>")
+							.attr("href", "#")
+							.click( marker, function(e){
+								var marker = e.data;
+								// Show tooltip
+								marker.showTooltip();
+								
+								// Center the map on the location
+								map.ease.location({
+										lat: marker.data.geometry.coordinates[1],
+										lon: marker.data.geometry.coordinates[0],
+                                        }).zoom(map.zoom()).optimal();
+							    })
+							.append($("<div>").addClass("descriptionListName").text(marker.data.properties.name))
+							.add($("<div>").addClass("list-desc").text(marker.data.properties.desc));
+
+
+			$('#onscreen').append(link);
+		}
+
+
+	$("#map").click(markers, function(e){
+		$('.marker-tooltip').fadeOut("slow")
+
+	});
 
 
     });
+
+
+
 
 });
 
