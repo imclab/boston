@@ -28,7 +28,7 @@ html {
 body{
     height: 100%;
     background-color: #A8B2B2;
-    background-image: url("/static/img/tex1.jpg");
+    background-image: url("/static/img/TextureTileBlue.jpg");
     
 }
 
@@ -64,8 +64,7 @@ h3 {
 h4 {
     font-family: "liberation-serif";
     font-size: 14px;
-    padding-top: 10px;
-    padding-left: 250px;
+    color: #494949;
 }
 
 
@@ -73,8 +72,7 @@ h5 {
     font-family: "bebas-neue", Arial, Verdana, sans-serif;
     font-weight: normal;
     font-size: 20px;
-    padding-top: 10px;
-    padding-left: 250px;
+    color: #494949;
 
 }
 
@@ -220,16 +218,20 @@ a {
 #about {
     position: absolute;
     top: 200px;
+    bottom: 400px;
     /*left:100px;*/
     padding-right: 200px;
-
+    top: 200px;
+    left:200px;
+    width: 1000px;
 }
 
 #about a {
      font-family: "liberation-serif";
      font-size: 14px;
-     color: #000000;
+     color: ##494949;
      /*text-decoration: dotted;*/
+
 
 }
 
@@ -239,12 +241,25 @@ a {
 
 }
 
+#skyline {
+    position: absolute;
+    top: 350px;
+    left: 200px;
+}
+
 .sources {
    position: absolute;
     top: 200px;
-    /*left:100px;*/
-    padding-right: 200px; 
+    left:200px;
+    background-color: #FFF;
+    border:2px solid #ccc;
+    width: 900px;
+    opacity: 0.8;
+    padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 80px; 
     padding-bottom: 550px;
     bottom: -300px;
     overflow: scroll;
+
 }   
