@@ -178,5 +178,25 @@
             "tag3": "Revolutionary War",
             "desc": "An early Boston bookseller proves the adage knowledge is power."
         }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.067534,
+                42.360217
+            ]
+        },
+        "properties": {
+            "address": "28 Phillips Street",
+            "image": "/static/img/AnthonyBurnsTeaser.jpg",
+            "video": "AnthonyBurns",
+            "city": "Boston",
+            "name": "Henry Knox",
+            "tag1": "Slavery",
+            "tag2": "Abolitionism",
+            "tag3": "Politics",
+            "desc": "A hanging coffin and black drapes on every window— the day Boston turned on Washington."
+        }
     }
 ]
