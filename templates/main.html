@@ -70,7 +70,7 @@ $.getJSON("static/features.json", function(features){
         '<h3>' + feature.properties.address + '</h3>' + 
         '<img class="descriptionImg" src="' + feature.properties.image + '"/>' + 
         '<div class="descriptionText" >' + feature.properties.desc + "</div>" + 
-        '<h4><a id="' + feature.properties.video + '" onclick="play(this.id);" href="#">Play</a></h4>';
+        '<h4><a class="play-link-button" id="' + feature.properties.video + '" onclick="play(this.id);" href="#">Play</a></h4>';
         return o;
     });
 
@@ -84,6 +84,7 @@ $.getJSON("static/features.json", function(features){
 
     var onscreen = document.getElementById('onscreen');
     map.addCallback('drawn', function() {
+		console.log('draw')
         var markers = markerLayer.markers();
 
         var list = '';
@@ -105,7 +106,7 @@ $.getJSON("static/features.json", function(features){
 //                 '</div>';
 //         }
 //         $("#onscreen").html(list);
-
+		$('#onscreen').empty();
 		for(var m in markers) {
 			var marker = markers[m];
 			$(marker.element).click(function(e) { e.stopPropagation(); });

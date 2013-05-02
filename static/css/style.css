@@ -191,6 +191,7 @@ a {
     font-family: "liberation-serif", Times, Serif;
     padding-top:8px;
     padding-right:10px;
+    padding-bottom: 20px;
     color: #494949;}
 
 .descriptionImgList {float:left; width:80px; height:60px; margin-right:20px;}
@@ -262,4 +263,8 @@ a {
     bottom: -300px;
     overflow: scroll;
 
-}   
+}
+
+.play-link-button {
+    padding-left:250px;
+}
