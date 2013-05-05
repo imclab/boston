@@ -24,6 +24,10 @@ class AboutHandler(tornado.web.RequestHandler):
     def get(self):
         self.render("about.html")
 
+class SubmitHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("submit.html")
+
 class SourcesHandler(tornado.web.RequestHandler):
  	def get(self):
  		self.render("sources.html")
@@ -32,6 +36,7 @@ class SourcesHandler(tornado.web.RequestHandler):
 handlers = [
             (r"/", MainHandler),
             (r"/about",  AboutHandler),
+            (r"/submit", SubmitHandler),
             (r"/sources", SourcesHandler),
             ]
 

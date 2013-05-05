@@ -248,6 +248,18 @@ a {
     left: 200px;
 }
 
+.submit {
+    position: absolute;
+    top: 200px;
+    bottom: 400px;
+    /*left:100px;*/
+    padding-right: 200px;
+    top: 200px;
+    left:200px;
+
+
+}
+
 .sources {
    position: absolute;
     top: 200px;
