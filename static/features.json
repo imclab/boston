@@ -198,5 +198,25 @@
             "tag3": "Politics",
             "desc": "A hanging coffin and black drapes on every window— the day Boston turned on Washington."
         }
+    },
+    {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -71.068992,
+                42.356614
+            ]
+        },
+        "properties": {
+            "address": "63 Beacon Street",
+            "image": "/static/img/PurplePanesTeaser.jpg",
+            "video": "PurplePanes",
+            "city": "Boston",
+            "name": "Purple Panes",
+            "tag1": "Brahmin",
+            "tag2": "Windows",
+            "tag3": "Beacon Hill",
+            "desc": "How a manufacturing mistake became all the rage— leaving a mark on Boston that has endured for generations"
+        }
     }
 ]
