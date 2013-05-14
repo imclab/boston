@@ -71,7 +71,12 @@ h4 {
     font-family: "liberation-serif";
     font-size: 14px;
     color: #494949;
+}
 
+.sources a:hover {
+    font-family: "liberation-serif";
+    font-size: 14px;
+    color: #888888;
 }
 
 
