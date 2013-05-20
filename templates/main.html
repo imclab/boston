@@ -19,9 +19,20 @@ function play(videoName) {
     shadow.appendTo(document.body);
     var overlay = $('<div id="overlay"><video id="myVideo" autoplay width="640" height="360" controls /></div>');
     overlay.appendTo(document.body);
-    var source = "http://www.unlock-boston.com/static/vid/" + videoName + ".webm";
-    console.log(source);
-    $("#myVideo").attr("src", source);
+    var videoFile = "http://www.unlock-boston.com/static/vid/" + videoName;
+	var webm = $("<source>").attr({
+						src : videoFile + ".webm",
+						type : "video/webm",
+						});
+	var mp4 = $("<source>").attr({
+						src : videoFile + ".mp4",
+						type : "video/mp4",
+						});
+	// var ogg =
+
+	$("#myVideo")
+		.append(webm)
+		.append(mp4)
 }
 
 
